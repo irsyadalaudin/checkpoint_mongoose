@@ -153,7 +153,7 @@ Person.create([
 /* USE model.find() TO SEARCH DATABASE */
 // Person.find({})
 
-/* USE model.findOne() TO RETURN A SINGLE MATCHING DOCUMENT FROM YOUR DATABASE */
+/* USE model.findOne() TO RETURN A SINGLE MATCHING DOCUMENT FROM DATABASE */
 Person.findOne({
     // name: 'Bro'
     // favoriteFood: 'Pizza'
