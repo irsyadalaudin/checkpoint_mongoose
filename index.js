@@ -157,7 +157,7 @@ Person.create([
     //     console.log('Error saving person', err)
     // })
 
-/* USE model.findById() TO SEARCH YOUR DATABASE */
+/* USE model.findById() TO SEARCH DATABASE */
 Person.find({})
     .then(doc => {
         console.log('Person saved:', doc)
