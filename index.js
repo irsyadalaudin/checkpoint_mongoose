@@ -1,4 +1,3 @@
-/* CREATE A PERSON PROTOTYPE */
 require('dotenv').config();
 const mongoose = require('mongoose');
 
@@ -7,6 +6,7 @@ mongoose.connect(process.env.MONGO_URI, {
     useUnifiedTopology: true
 });
 
+/* CREATE A PERSON WITH PROTOTYPE */
 const personSchema = new mongoose.Schema({
     name: {type: String, required: true},
     userName: {type: String, required: true, unique: true},
@@ -19,7 +19,8 @@ const personSchema = new mongoose.Schema({
 
 const Person = mongoose.model('Person', personSchema);
 
-/* FOR ADDING 1 PERSON
+/* CREATE AND SAVE A RECORD OF A model */
+/*
 const newPerson = new Person(
     {
         name: 'Bro',
@@ -32,7 +33,8 @@ const newPerson = new Person(
     },
 ) */
 
-/* FOR ADDING GRATER THAN 1 PERSON */
+/* CREATE MANY RECORDS WITH model.create() */
+/*
 Person.create([
     {
         name: 'Bro',
@@ -116,9 +118,9 @@ Person.create([
         favoriteFood: ['Burger', 'Fries']
     },
     {
-        name: 'Olivia',
-        userName: 'olivia_19',
-        email: 'olivia@example.com',
+        name: 'Mary',
+        userName: 'mary_19',
+        email: 'mary@example.com',
         dateOfBirth: new Date(1997, 4, 22),
         age: 24,
         skill: ['UI Design', 'Illustration'],
@@ -142,10 +144,22 @@ Person.create([
         skill: ['UI/UX Design', 'Illustration'],
         favoriteFood: ['Pasta', 'Noodle', 'Salad']
     }    
-])
+])*/
 
-// newPerson.save()                               /* FOR ADDING 1 PERSON */
-    .then(doc => {                                /* FOR SAVING GRATER THAN 1 PERSON */
+
+/* USE model.save() TO SAVE A RECORD */
+// newPerson.save()                                    // FOR SAVING 1 PERSON
+    // .then(doc => {                                  // FOR SAVING GRATER THAN 1 PERSON
+    //     console.log('Person saved:', doc)
+    // })
+        
+    // .catch(err => {
+    //     console.log('Error saving person', err)
+    // })
+
+/* USE model.findById() TO SEARCH YOUR DATABASE */
+Person.find({})
+    .then(doc => {
         console.log('Person saved:', doc)
     })
     
