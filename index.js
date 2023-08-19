@@ -149,20 +149,21 @@ Person.create([
 
 /* USE model.save() TO SAVE A RECORD */
 // newPerson.save()                                    // FOR SAVING 1 PERSON
-    // .then(doc => {                                  // FOR SAVING GRATER THAN 1 PERSON
-    //     console.log('Person saved:', doc)
-    // })
-        
-    // .catch(err => {
-    //     console.log('Error saving person', err)
-    // })
 
-/* USE model.findById() TO SEARCH DATABASE */
-Person.find({})
+/* USE model.find() TO SEARCH DATABASE */
+// Person.find({})
+
+/* USE model.findOne() TO RETURN A SINGLE MATCHING DOCUMENT FROM YOUR DATABASE */
+Person.findOne({
+    // name: 'Bro'
+    // favoriteFood: 'Pizza'
+    favoriteFood: { $regex: 'burger', $options: 'i' }
+})
+
     .then(doc => {
-        console.log('Person saved:', doc)
+        console.log('The code run smoothly', doc)
     })
-    
+
     .catch(err => {
-        console.log('Error saving person', err)
+        console.log('The code error', err)
     })
