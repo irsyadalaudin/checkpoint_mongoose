@@ -166,14 +166,15 @@ Person.find({})
     .catch(err => {
         console.log('Error finding persons', err)
     })
-*/
 
-
-/* USE model.findOne() TO RETURN A SINGLE MATCHING DOCUMENT FROM DATABASE
-Person.findOne({
+Person.find({
     // name: 'Bro'
     // favoriteFood: 'Pizza'
-    favoriteFood: { $regex: 'burger', $options: 'i' }
+    // favoriteFood: { $regex: 'burger', $options: 'i' }
+    $or: [
+        { favoriteFood: { $regex: 'pizza', $options: 'i' } },
+        { favoriteFood: { $regex: 'burger', $options: 'i' } }
+    ]
 })
     .then(person => {
         console.log('Person found:', person)
@@ -182,6 +183,23 @@ Person.findOne({
         console.log('Error finding person', err)
     })
 */
+
+
+/* USE model.findOne() TO RETURN A SINGLE MATCHING DOCUMENT FROM DATABASE */
+Person.findOne({
+    name: 'Ryan',
+    $or: [
+        { favoriteFood: { $regex: 'pizza', $options: 'i' } },
+        { favoriteFood: { $regex: 'burger', $options: 'i' } }
+    ]
+})
+    .then(person => {
+        console.log('Person found:', person)
+    })
+    .catch(err => {
+        console.log('Error finding person', err)
+    })
+
 
 
 /* USE model.findById() TO SEARCH DATABASE BY _id
@@ -282,7 +300,7 @@ Person.deleteMany({name})
 /*
 
 
-/* CHAIN search query HELPERS TO NARROW SEARCH RESULTS */
+/* CHAIN search query HELPERS TO NARROW SEARCH RESULTS 
 Person.find({favoriteFood: 'Burritos'})
     .sort({name: 1})
     .limit(2)
@@ -300,3 +318,4 @@ Person.find({favoriteFood: 'Burritos'})
         .catch(err => {
             console.log('Error searching', err);
         })
+*/
