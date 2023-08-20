@@ -251,4 +251,11 @@ Person.findOneAndRemove({userName})
 
 
 /* MongoDB AND Mongoose - DELETE MANY DOCUMENTS USING model.remove() */
-
+const name = 'Mary';
+Person.deleteMany({name})
+    .then(deletedPerson => {
+        console.log(`${name} has been deleted`, deletedPerson);
+    })
+    .catch(err => {
+        console.log(`Error deleting ${name}`, err)
+    })
