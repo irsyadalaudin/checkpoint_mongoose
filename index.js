@@ -163,12 +163,30 @@ Person.findOne({
 })
 */
 
-/* USE model.findById() TO SEARCH DATABASE BY _id */
+/* USE model.findById() TO SEARCH DATABASE BY _id
 Person.findById('64e08415563873704a8fd124')
-    .then(doc => {
-        console.log('The code run smoothly', doc)
+*/
+
+/* PERFORM CLASSIC UPDATES BY RUNNING find, edit, then save */
+const personId = '64e0de80fdd968dd720ea584';
+Person.findById(personId)
+    .then(person => {
+        if (!person) {
+            console.log('Person not found')
+            return;
+        }
+
+        person.favoriteFood.push('Hamburger');
+        person.save()
+        .then(updatedPerson  => {
+            console.log('Updated person', updatedPerson)
+        })
+        
+        .catch(err => {
+            console.log('Error saving updated person', err)
+        });
     })
 
     .catch(err => {
-        console.log('The code error', err)
+        console.log('Error finding person', err)
     })
