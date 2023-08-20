@@ -238,6 +238,7 @@ Person.findOneAndUpdate(
 
 
 /* DELETE ONE DOCUMENT USING model.findByIdAndRemove() OR findOneAndRemove() */
+// const idPerson = '64e0de80fdd968dd720ea587';
 const userName = 'michael34'
 Person.findOneAndRemove({userName})
     .then(deletedPerson => {
