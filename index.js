@@ -147,18 +147,21 @@ Person.create([
 ])*/
 
 
-/* USE model.save() TO SAVE A RECORD */
-// newPerson.save()                        // FOR SAVING 1 PERSON
+/* USE model.save() TO SAVE A RECORD   // FOR SAVING 1 PERSON
+newPerson.save()
+*/
 
-/* USE model.find() TO SEARCH DATABASE */
-// Person.find({})
+/* USE model.find() TO SEARCH DATABASE
+Person.find({})
+*/
 
-/* USE model.findOne() TO RETURN A SINGLE MATCHING DOCUMENT FROM DATABASE */
-// Person.findOne({
-//     // name: 'Bro'
-//     // favoriteFood: 'Pizza'
-//     favoriteFood: { $regex: 'burger', $options: 'i' }
-// })
+/* USE model.findOne() TO RETURN A SINGLE MATCHING DOCUMENT FROM DATABASE
+Person.findOne({
+    // name: 'Bro'
+    // favoriteFood: 'Pizza'
+    favoriteFood: { $regex: 'burger', $options: 'i' }
+})
+*/
 
 /* USE model.findById() TO SEARCH DATABASE BY _id */
 Person.findById('64e08415563873704a8fd124')
