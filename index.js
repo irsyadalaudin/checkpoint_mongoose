@@ -26,9 +26,9 @@ const newPerson = new Person(
         name: 'Bro',
         userName: 'Br000',
         email: 'vv@gmail.com',
-        dateOfBirth: new Date(2001, 3, 24),    // 0 = Januari, 3 = April
-        age: 22,
-        skill: ['UI/UX design', 'Fullstack Javascript'],
+        dateOfBirth: new Date(1999, 3, 24),    // 0 = Januari, 3 = April
+        age: 24,
+        skill: ['CEO', 'UI/UX design', 'Fullstack Javascript'],
         favoriteFood: ['Pizza', 'Burger']
     },
 ) */
@@ -40,9 +40,9 @@ Person.create([
         name: 'Bro',
         userName: 'Bro000',
         email: 'brobro000@gmail.com',
-        dateOfBirth: new Date(2001, 3, 24),    // 0 = Januari, 3 = April
-        age: 22,
-        skill: ['UI/UX design', 'Fullstack Javascript'],
+        dateOfBirth: new Date(1999, 3, 24),    // 0 = Januari, 3 = April
+        age: 24,
+        skill: ['CEO', 'UI/UX design', 'Fullstack Javascript'],
         favoriteFood: ['Sushi', 'Burger', 'Noodle']
     },
     {
@@ -67,26 +67,26 @@ Person.create([
         name: 'Alice',
         userName: 'alice123',
         email: 'alice@gmail.com',
-        dateOfBirth: new Date(1995, 8, 12),
-        age: 27,
-        skill: ['Web Development', 'Graphic Design'],
+        dateOfBirth: new Date(2001, 8, 12),
+        age: 22,
+        skill: ['Secertary','Web Development', 'Graphic Design'],
         favoriteFood: ['Sushi', 'Pasta']
     },
     {
         name: 'John',
         userName: 'john_doe',
         email: 'john.doe@example.com',
-        dateOfBirth: new Date(1990, 5, 18),
-        age: 31,
-        skill: ['Backend Development', 'Database Management'],
+        dateOfBirth: new Date(1999, 5, 18),
+        age: 24,
+        skill: ['Finance', 'Backend Development', 'Database Management'],
         favoriteFood: ['Steak', 'Potatoes']
     },
     {
         name: 'Emma',
         userName: 'emma_28',
         email: 'emma@example.com',
-        dateOfBirth: new Date(1998, 10, 5),
-        age: 23,
+        dateOfBirth: new Date(1999, 10, 5),
+        age: 24,
         skill: ['Mobile App Development', 'User Experience'],
         favoriteFood: ['Tacos', 'Roasted Chicken']
     },
@@ -94,8 +94,8 @@ Person.create([
         name: 'David',
         userName: 'david22',
         email: 'david@email.com',
-        dateOfBirth: new Date(1987, 1, 8),
-        age: 34,
+        dateOfBirth: new Date(1999, 1, 8),
+        age: 24,
         skill: ['Data Science', 'Machine Learning'],
         favoriteFood: ['Sushi', 'Roasted Chicken', 'Fried Rice']
     },
@@ -112,8 +112,8 @@ Person.create([
         name: 'Michael',
         userName: 'michael34',
         email: 'michael@email.com',
-        dateOfBirth: new Date(1985, 11, 15),
-        age: 36,
+        dateOfBirth: new Date(2000, 11, 15),
+        age: 23,
         skill: ['DevOps', 'Cloud Computing'],
         favoriteFood: ['Burger', 'Fries']
     },
@@ -121,8 +121,8 @@ Person.create([
         name: 'Mary',
         userName: 'mary_19',
         email: 'mary@example.com',
-        dateOfBirth: new Date(1997, 4, 22),
-        age: 24,
+        dateOfBirth: new Date(2001, 4, 22),
+        age: 22,
         skill: ['UI Design', 'Illustration'],
         favoriteFood: ['Pizza', 'Noodle']
     },
@@ -130,8 +130,8 @@ Person.create([
         name: 'Ryan',
         userName: 'ryan01',
         email: 'ryan@example.com',
-        dateOfBirth: new Date(1993, 2, 10),
-        age: 28,
+        dateOfBirth: new Date(2002, 2, 10),
+        age: 21,
         skill: ['Frontend Development', 'React'],
         favoriteFood: ['Burger', 'Pizza']
     },
@@ -139,8 +139,8 @@ Person.create([
         name: 'Lily',
         userName: 'lily_15',
         email: 'lily@email.com',
-        dateOfBirth: new Date(1999, 7, 9),
-        age: 22,
+        dateOfBirth: new Date(2003, 7, 9),
+        age: 20,
         skill: ['UI/UX Design', 'Illustration'],
         favoriteFood: ['Pasta', 'Noodle', 'Salad']
     }    
