@@ -151,9 +151,11 @@ Person.create([
 newPerson.save()
 */
 
+
 /* USE model.find() TO SEARCH DATABASE
 Person.find({})
 */
+
 
 /* USE model.findOne() TO RETURN A SINGLE MATCHING DOCUMENT FROM DATABASE
 Person.findOne({
@@ -163,11 +165,13 @@ Person.findOne({
 })
 */
 
+
 /* USE model.findById() TO SEARCH DATABASE BY _id
 Person.findById('64e08415563873704a8fd124')
 */
 
-/* PERFORM CLASSIC UPDATES BY RUNNING find, edit, then save */
+
+/* PERFORM CLASSIC UPDATES BY RUNNING find, edit, then save
 const personId = '64e0de80fdd968dd720ea584';
 Person.findById(personId)
     .then(person => {
@@ -190,3 +194,6 @@ Person.findById(personId)
     .catch(err => {
         console.log('Error finding person', err)
     })
+*/
+
+
