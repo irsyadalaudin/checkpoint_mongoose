@@ -185,7 +185,7 @@ Person.find({
 */
 
 
-/* USE model.findOne() TO RETURN A SINGLE MATCHING DOCUMENT FROM DATABASE */
+/* USE model.findOne() TO RETURN A SINGLE MATCHING DOCUMENT FROM DATABASE 
 Person.findOne({
     name: 'Ryan',
     $or: [
@@ -199,7 +199,7 @@ Person.findOne({
     .catch(err => {
         console.log('Error finding person', err)
     })
-
+*/
 
 
 /* USE model.findById() TO SEARCH DATABASE BY _id
@@ -300,7 +300,7 @@ Person.deleteMany({name})
 /*
 
 
-/* CHAIN search query HELPERS TO NARROW SEARCH RESULTS 
+/* CHAIN search query HELPERS TO NARROW SEARCH RESULTS */
 Person.find({favoriteFood: 'Burritos'})
     .sort({name: 1})
     .limit(2)
@@ -318,4 +318,3 @@ Person.find({favoriteFood: 'Burritos'})
         .catch(err => {
             console.log('Error searching', err);
         })
-*/
