@@ -149,11 +149,23 @@ Person.create([
 
 /* USE model.save() TO SAVE A RECORD   // FOR SAVING 1 PERSON
 newPerson.save()
+    .then(savedPerson => {
+        console.log('Person saved:', savedPerson)
+    })
+    .catch(err => {
+        console.log('Error saving person', err)
+    })
 */
 
 
 /* USE model.find() TO SEARCH DATABASE
 Person.find({})
+    .then(persons => {
+        console.log('Persons found:', persons)
+    })
+    .catch(err => {
+        console.log('Error finding persons', err)
+    })
 */
 
 
@@ -163,11 +175,23 @@ Person.findOne({
     // favoriteFood: 'Pizza'
     favoriteFood: { $regex: 'burger', $options: 'i' }
 })
+    .then(person => {
+        console.log('Person found:', person)
+    })
+    .catch(err => {
+        console.log('Error finding person', err)
+    })
 */
 
 
 /* USE model.findById() TO SEARCH DATABASE BY _id
 Person.findById('64e08415563873704a8fd124')
+    .then(person => {
+        console.log('Person found:', person)
+    })
+    .catch(err => {
+        console.log('Error finding person', err)
+    })
 */
 
 
@@ -179,7 +203,6 @@ Person.findById(personId)
             console.log('Person not found')
             return;
         }
-
         person.favoriteFood.push('Hamburger');
         person.save()
         .then(updatedPerson  => {
@@ -190,7 +213,6 @@ Person.findById(personId)
             console.log('Error saving updated person', err)
         });
     })
-
     .catch(err => {
         console.log('Error finding person', err)
     })
@@ -207,11 +229,9 @@ Person.findOneAndUpdate(
     {new: true},
     {runValidators: true}
 )
-
     .then(updatedPerson => {
         console.log('Updated person:', updatedPerson);
     })
-
     .catch(err => {
         console.log('Error updating person', err);
     })
