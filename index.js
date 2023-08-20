@@ -216,7 +216,26 @@ Person.findById(personId)
     .catch(err => {
         console.log('Error finding person', err)
     })
+
+const personId = '64e0de80fdd968dd720ea582';
+Person.findById(personId)
+    .then(person => {
+        if (!person) {
+            console.log('Person not found')
+            return;
+        }
+        person.favoriteFood.push('Burritos');
+        person.save()
+        .then(updatedPerson  => {
+            console.log('Updated person', updatedPerson)
+        })
+        
+        .catch(err => {
+            console.log('Error saving updated person', err)
+        });
+    })
 */
+
 
 /* PERFORM NEW UPDATES ON A DOCUMENT USING model.findOneAndUpdate()
 Person.findOneAndUpdate(
@@ -250,7 +269,7 @@ Person.findOneAndRemove({userName})
 /*
 
 
-/* MongoDB AND Mongoose - DELETE MANY DOCUMENTS USING model.remove() */
+/* MongoDB AND Mongoose - DELETE MANY DOCUMENTS USING model.remove()
 const name = 'Mary';
 Person.deleteMany({name})
     .then(deletedPerson => {
@@ -259,3 +278,24 @@ Person.deleteMany({name})
     .catch(err => {
         console.log(`Error deleting ${name}`, err)
     })
+/*
+
+
+/* CHAIN search query HELPERS TO NARROW SEARCH RESULTS */
+Person.find({favoriteFood: 'Burritos'})
+    .sort({name: 1})
+    .limit(2)
+    .select({age: 0})
+    // .exec((err, docs) => {                         // mongoose v6.10.0 
+    //     if (err) {
+    //         console.log('Error searching', err);
+    //     } else {
+    //         console.log('Search results:', docs);
+    //     }
+    // })
+        .then(docs => {
+            console.log('Search results:', docs);
+        })
+        .catch(err => {
+            console.log('Error searching', err);
+        })
