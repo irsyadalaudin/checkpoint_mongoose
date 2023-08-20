@@ -218,8 +218,7 @@ Person.findById(personId)
     })
 */
 
-/* PERFORM NEW UPDATES ON A DOCUMENT USING model.findOneAndUpdate() */
-// const personName = 'Sophia';
+/* PERFORM NEW UPDATES ON A DOCUMENT USING model.findOneAndUpdate()
 Person.findOneAndUpdate(
     {userName: 'sophia_grace'},
     {
@@ -234,4 +233,16 @@ Person.findOneAndUpdate(
     })
     .catch(err => {
         console.log('Error updating person', err);
+    })
+*/
+
+
+/* DELETE ONE DOCUMENT USING model.findByIdAndRemove() OR findOneAndRemove() */
+const userName = 'michael34'
+Person.findOneAndRemove({userName})
+    .then(deletedPerson => {
+        console.log(`${userName} has been deleted`, deletedPerson);
+    })
+    .catch(err => {
+        console.log(`Error deleting ${userName}`, err)
     })
