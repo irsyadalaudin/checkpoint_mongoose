@@ -185,7 +185,8 @@ Person.findOne({
 
 
 /* USE model.findById() TO SEARCH DATABASE BY _id
-Person.findById('64e08415563873704a8fd124')
+const personId = '64e08415563873704a8fd124';
+Person.findById(personId)
     .then(person => {
         console.log('Person found:', person)
     })
