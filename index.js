@@ -104,7 +104,7 @@ Person.create([
         userName: 'sophia_grace',
         email: 'sophia@example.com',
         dateOfBirth: new Date(2000, 6, 30),
-        age: 21,
+        age: 23,
         skill: ['Frontend Development', 'UI Design'],
         favoriteFood: ['Salad', 'Potatoes']
     },
@@ -196,4 +196,22 @@ Person.findById(personId)
     })
 */
 
+/* PERFORM NEW UPDATES ON A DOCUMENT USING model.findOneAndUpdate() */
+// const personName = 'Sophia';
+Person.findOneAndUpdate(
+    {userName: 'sophia_grace'},
+    {
+        dateOfBirth: new Date(2003, 3, 24),
+        age: 20
+    },
+    {new: true},
+    {runValidators: true}
+)
 
+    .then(updatedPerson => {
+        console.log('Updated person:', updatedPerson);
+    })
+
+    .catch(err => {
+        console.log('Error updating person', err);
+    })
