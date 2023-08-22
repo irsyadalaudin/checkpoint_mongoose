@@ -20,21 +20,28 @@ const personSchema = new mongoose.Schema({
 const Person = mongoose.model('Person', personSchema);
 
 /* CREATE AND SAVE A RECORD OF A model */
-/*
+/* USE model.save() TO SAVE A RECORD   // FOR SAVING 1 PERSON
 const newPerson = new Person(
     {
-        name: 'Bro',
-        userName: 'Br000',
-        email: 'vv@gmail.com',
+        name: 'Bro Coy',
+        userName: 'Bro000',
+        email: 'brocoy@gmail.com',
         dateOfBirth: new Date(1999, 3, 24),    // 0 = Januari, 3 = April
         age: 24,
         skill: ['CEO', 'UI/UX design', 'Fullstack Javascript'],
         favoriteFood: ['Pizza', 'Burger']
     },
-) */
+)
+newPerson.save()
+    .then(savedPerson => {
+        console.log('Person saved:', savedPerson)
+    })
+    .catch(err => {
+        console.log('Error saving person', err)
+    })
+*/
 
 /* CREATE MANY RECORDS WITH model.create() */
-/*
 Person.create([
     {
         name: 'Bro',
@@ -144,18 +151,13 @@ Person.create([
         skill: ['UI/UX Design', 'Illustration'],
         favoriteFood: ['Pasta', 'Noodle', 'Salad']
     }    
-])*/
-
-
-/* USE model.save() TO SAVE A RECORD   // FOR SAVING 1 PERSON
-newPerson.save()
-    .then(savedPerson => {
-        console.log('Person saved:', savedPerson)
+])
+    .then(doc => {
+        console.log('All person created', doc)
     })
     .catch(err => {
-        console.log('Error saving person', err)
+        console.log('Error while creating person', err)
     })
-*/
 
 
 /* USE model.find() TO SEARCH DATABASE
@@ -300,7 +302,7 @@ Person.deleteMany({name})
 /*
 
 
-/* CHAIN search query HELPERS TO NARROW SEARCH RESULTS */
+/* CHAIN search query HELPERS TO NARROW SEARCH RESULTS
 Person.find({favoriteFood: 'Burritos'})
     .sort({name: 1})
     .limit(2)
@@ -318,3 +320,4 @@ Person.find({favoriteFood: 'Burritos'})
         .catch(err => {
             console.log('Error searching', err);
         })
+*/
